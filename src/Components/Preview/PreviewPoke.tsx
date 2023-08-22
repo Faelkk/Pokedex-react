@@ -13,13 +13,13 @@ import {
   PokemonName,
   PokemonTypes,
   PreviewPokemon,
-  PreviewPokemonImage,
   PreviewSection,
   ContainerBtns,
   ContainerCard,
 } from "./Style";
 import { use_pokePreview } from "../../Hooks/FetchApi";
 import Modal from "../Modal/Modal";
+import Image from "../Helpers/Image";
 
 const PreviewPoke = () => {
   const arrayPrevsNumber = [
@@ -36,6 +36,7 @@ const PreviewPoke = () => {
 
   useEffect(() => {
     getRandomIndex();
+    setModal(false);
     const interval = setInterval(getRandomIndex, 8000);
 
     return () => clearInterval(interval);
@@ -78,7 +79,8 @@ const PreviewPoke = () => {
                   </ContainerBtns>
                 </PreviewInfo>
                 <PreviewPokemon>
-                  <PreviewPokemonImage
+                  <Image
+                    className="PokePreview"
                     src={pokemonPreview.sprites.other.home.front_default}
                     alt={pokemonPreview.name}
                   />

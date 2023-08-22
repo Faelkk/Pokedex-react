@@ -40,7 +40,7 @@ const Modal: React.FC<typePokemon> = ({ pokemon, modal, setModal }) => {
           onClick={() => setModal(!modal)}
         />
         <ContainerLeft>
-          <Image src={imgPoke} alt={pokemon?.name} />
+          <Image src={imgPoke} alt={pokemon?.name} className="pokeModal" />
 
           <ContainerNames>
             <SpanName> {`#${pokemon?.id}`}</SpanName>

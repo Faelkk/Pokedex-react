@@ -10,11 +10,7 @@ const Skeleton = styled.div`
   height: 100%;
   background: transparent;
   background-size: 200%;
-  height: 150px;
-  max-height: 150px;
   animation: skeleton 1.5s infinite linear;
-  width: 150px;
-  max-width: 150px;
 
   @keyframes skeleton {
     from {
@@ -29,10 +25,30 @@ const Skeleton = styled.div`
 const ImgCard = styled.img`
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-  width: 150px;
-  max-width: 150px;
-  height: 150px;
-  max-height: 150px;
+
+  &.pokeModal {
+    width: 150px;
+    max-width: 150px;
+    height: 150px;
+    max-height: 150px;
+  }
+  &.PokePreview {
+    width: 360px;
+    max-width: 360px;
+    height: auto;
+    object-fit: cover;
+    filter: drop-shadow(0 0 0.75rem rgb(57, 55, 56));
+
+    @media (max-width: 1020px) {
+      width: 300px;
+      max-width: 300px;
+    }
+
+    @media (max-width: 624px) {
+      width: 250px;
+      max-width: 250px;
+    }
+  }
 `;
 
 interface TypeAlt {
@@ -44,7 +60,7 @@ interface TypeAlt {
   alt?: string;
 }
 
-const Image: React.FC<TypeAlt> = ({ src, alt, ...props }) => {
+const Image: React.FC<TypeAlt> = ({ src, alt, className, ...props }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   function handleLoad(event: React.ChangeEvent<HTMLImageElement>) {
@@ -55,7 +71,13 @@ const Image: React.FC<TypeAlt> = ({ src, alt, ...props }) => {
   return (
     <Wrapper>
       {isLoading && <Skeleton></Skeleton>}
-      <ImgCard onLoad={handleLoad} src={src} alt={alt} {...props} />
+      <ImgCard
+        className={className}
+        onLoad={handleLoad}
+        src={src}
+        alt={alt}
+        {...props}
+      />
     </Wrapper>
   );
 };

@@ -96,6 +96,7 @@ export const LoadContainer = styled.div`
   height: 29rem;
   width: 100%;
   background: #181b1d;
+  border-radius: 0.4rem;
   @media (max-width: 700px) {
     height: 560px;
   }
