@@ -17,6 +17,7 @@ import imgRuler from "../../assets/icon-ruler.svg";
 import Loading from "../Helpers/Loading";
 import Error from "../Helpers/Error";
 import { TypeCard } from "../../Types/Type";
+import { ErrorImage } from "../Helpers/ErrorImage";
 
 const Card: React.FC<TypeCard> = ({ pokeURL, onCardClick }) => {
   const { pokemon, loading, error } = usePokemon(pokeURL);
@@ -29,11 +30,15 @@ const Card: React.FC<TypeCard> = ({ pokeURL, onCardClick }) => {
   if (pokemon)
     return (
       <CardPokemon onClick={() => onCardClick(pokemon)}>
-        <ImgPoke src={imgPoke} alt={`${pokemon.name} imagem`} />
+        {imgPoke ? (
+          <ImgPoke src={imgPoke} alt={`${pokemon.name} imagem`} />
+        ) : (
+          <ErrorImage className="card" />
+        )}
 
         <ContainerNames>
           <PokeInfo>{`#${pokemon?.id}`}</PokeInfo>
-          <PokeInfo>{pokemon?.name}</PokeInfo>
+          <PokeInfo className="name">{pokemon?.name}</PokeInfo>
         </ContainerNames>
         <ContainerTypes>
           {pokemon?.types.map((type) => (

@@ -51,12 +51,14 @@ export const ImgPoke = styled.img`
   width: 150px;
   max-height: 150px;
   height: 150px;
+  max-height: 150px;
 `;
 export const ContainerNames = styled.div`
   margin-top: 1rem;
-  font-size: 1.2rem;
   display: flex;
+  align-items: center;
   gap: 0.5rem;
+  text-align: center;
   @media (max-width: 768px) {
     gap: 1rem;
   }

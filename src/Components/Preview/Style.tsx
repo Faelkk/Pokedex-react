@@ -179,23 +179,6 @@ export const PreviewPokemon = styled.div`
   }
 `;
 
-export const PreviewPokemonImage = styled.img`
-  width: 360px;
-  max-width: 360px;
-  height: auto;
-  object-fit: cover;
-  filter: drop-shadow(0 0 0.75rem rgb(57, 55, 56));
-
-  @media (max-width: 1020px) {
-    width: 300px;
-    max-width: 300px;
-  }
-
-  @media (max-width: 624px) {
-    width: 250px;
-    max-width: 250px;
-  }
-`;
 export const ContainerBtns = styled.span`
   display: flex;
   flex-direction: column;

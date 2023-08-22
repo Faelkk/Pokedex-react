@@ -25,6 +25,7 @@ import imgWeight from "../../assets/icon-weight.svg";
 import imgRuler from "../../assets/icon-ruler.svg";
 import closeImg from "../../assets/close.svg";
 import Image from "../Helpers/Image";
+import { ErrorImage } from "../Helpers/ErrorImage";
 
 const Modal: React.FC<typePokemon> = ({ pokemon, modal, setModal }) => {
   const imgPoke =
@@ -40,7 +41,11 @@ const Modal: React.FC<typePokemon> = ({ pokemon, modal, setModal }) => {
           onClick={() => setModal(!modal)}
         />
         <ContainerLeft>
-          <Image src={imgPoke} alt={pokemon?.name} className="pokeModal" />
+          {imgPoke ? (
+            <Image src={imgPoke} alt={pokemon?.name} className="pokeModal" />
+          ) : (
+            <ErrorImage className="modal" />
+          )}
 
           <ContainerNames>
             <SpanName> {`#${pokemon?.id}`}</SpanName>

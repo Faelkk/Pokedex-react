@@ -48,6 +48,9 @@ export const ContainerLeft = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (max-width: 1120px) {
+    margin-bottom: 1.5rem;
+  }
 `;
 
 export const ContainerRight = styled.div`
@@ -68,9 +71,12 @@ export const ImagePoke = styled.img`
 `;
 export const ContainerNames = styled.span`
   margin-top: 1rem;
-  font-size: 2rem;
+  font-size: 1.1rem;
   display: flex;
   gap: 1.2rem;
+  @media (max-width: 1120px) {
+    font-size: 1.5rem;
+  }
 `;
 export const SpanName = styled.span`
   font-family: "Noto Sans JP", sans-serif;
