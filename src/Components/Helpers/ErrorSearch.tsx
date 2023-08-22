@@ -56,7 +56,7 @@ const ErrorSearch = () => {
     <ErrorContainer>
       <Message>
         <TextMessage>Pokemon não encontrado...</TextMessage>
-        <ErrorImage src={error} alt="error" />
+        <ErrorImage src={error} alt="error pokemon not found" />
       </Message>
     </ErrorContainer>
   );

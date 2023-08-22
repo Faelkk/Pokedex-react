@@ -69,6 +69,7 @@ const SearchPoke = () => {
             <SidesDiv className="Right">
               <ImgPoke
                 src={pokeInfo?.sprites.other["official-artwork"].front_default}
+                alt={pokeInfo.name}
               />
             </SidesDiv>
           </ContainerPokeInput>

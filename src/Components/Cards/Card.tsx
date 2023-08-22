@@ -29,7 +29,7 @@ const Card: React.FC<TypeCard> = ({ pokeURL, onCardClick }) => {
   if (pokemon)
     return (
       <CardPokemon onClick={() => onCardClick(pokemon)}>
-        <ImgPoke src={imgPoke} />
+        <ImgPoke src={imgPoke} alt={`${pokemon.name} imagem`} />
 
         <ContainerNames>
           <PokeInfo>{`#${pokemon?.id}`}</PokeInfo>
@@ -44,13 +44,13 @@ const Card: React.FC<TypeCard> = ({ pokeURL, onCardClick }) => {
         </ContainerTypes>
         <ContainerDescription>
           <DivDescription>
-            <IconDescription src={imgRuler} />
+            <IconDescription src={imgRuler} alt="medida altura" />
             <SpanDescription>{`Altura: ${
               pokemon?.height / 10
             } m`}</SpanDescription>
           </DivDescription>
           <DivDescription>
-            <IconDescription src={imgWeight} />
+            <IconDescription src={imgWeight} alt="peso icon" />
             <SpanDescription>{`Peso: ${
               pokemon?.weight / 10
             } kg`}</SpanDescription>

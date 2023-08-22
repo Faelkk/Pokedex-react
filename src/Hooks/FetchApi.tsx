@@ -69,7 +69,7 @@ export const usePokemon = (pokeURL: string) => {
   return { pokemon, loading, error };
 };
 
-export const useApiType = (typeName: string) => {
+export const useApiType = (typeName: string | undefined) => {
   const url_type = `https://pokeapi.co/api/v2/type/${typeName}`;
 
   const [PokedexFilter, setPokedexFilter] = useState<PokeFilter | undefined>();

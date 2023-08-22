@@ -34,7 +34,11 @@ const Modal: React.FC<typePokemon> = ({ pokemon, modal, setModal }) => {
   return (
     <ContainerModal>
       <ModalWindow>
-        <CloseModal src={closeImg} onClick={() => setModal(!modal)} />
+        <CloseModal
+          src={closeImg}
+          alt="Clique para fechar"
+          onClick={() => setModal(!modal)}
+        />
         <ContainerLeft>
           <Image src={imgPoke} alt={pokemon?.name} />
 
@@ -51,13 +55,13 @@ const Modal: React.FC<typePokemon> = ({ pokemon, modal, setModal }) => {
           </ContainerTypes>
           <ContainerDescription>
             <DescriptionDiv>
-              <ImgIcon src={imgRuler} />
+              <ImgIcon src={imgRuler} alt="peso medida" />
               {pokemon?.height !== undefined && (
                 <SpanInfo>{`Altura: ${pokemon?.height / 10} m`}</SpanInfo>
               )}
             </DescriptionDiv>
             <DescriptionDiv>
-              <ImgIcon src={imgWeight} />
+              <ImgIcon src={imgWeight} alt="Peso icon" />
               {pokemon?.weight !== undefined && (
                 <SpanInfo>{`Peso: ${pokemon?.weight / 10} m`}</SpanInfo>
               )}

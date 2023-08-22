@@ -22,7 +22,7 @@ const Error = () => {
   return (
     <ContainerError>
       <TitleError>Erro ao fazer as requisições</TitleError>
-      <ImgError src={imgIcon} alt="Imagem de erro" />
+      <ImgError src={imgIcon} alt="Imagem de erro na requisição" />
     </ContainerError>
   );
 };

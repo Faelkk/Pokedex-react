@@ -14,7 +14,7 @@ const BtnTop = () => {
   function handleClick() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
-  return <ImgBtn src={iconBtn} onClick={handleClick} />;
+  return <ImgBtn src={iconBtn} alt="Suba para o topo" onClick={handleClick} />;
 };
 
 export default BtnTop;
