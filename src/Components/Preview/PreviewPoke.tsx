@@ -36,7 +36,7 @@ const PreviewPoke = () => {
 
   useEffect(() => {
     getRandomIndex();
-    const interval = setInterval(getRandomIndex, 5000);
+    const interval = setInterval(getRandomIndex, 8000);
 
     return () => clearInterval(interval);
   }, []);
@@ -53,11 +53,13 @@ const PreviewPoke = () => {
         </LogoContainer>
 
         {loading ? (
-          <PreviewCard>
-            <LoadContainer className="animate">
-              <LoadImage src={load} alt="load" />
-            </LoadContainer>
-          </PreviewCard>
+          <ContainerCard>
+            <PreviewCard>
+              <LoadContainer className="animate">
+                <LoadImage src={load} alt="load" />
+              </LoadContainer>
+            </PreviewCard>
+          </ContainerCard>
         ) : pokemonPreview && pokemonPreview.name ? (
           <>
             <ContainerCard onClick={handleClick}>

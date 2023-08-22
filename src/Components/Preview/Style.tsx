@@ -96,9 +96,13 @@ export const LoadContainer = styled.div`
   height: 29rem;
   width: 100%;
   background: #181b1d;
+  @media (max-width: 700px) {
+    height: 560px;
+  }
 `;
 export const LoadImage = styled.img`
   height: 100%;
+  object-fit: cover;
 `;
 
 export const PreviewInfo = styled.div`

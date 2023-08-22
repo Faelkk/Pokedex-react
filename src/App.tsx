@@ -23,6 +23,7 @@ const App = () => {
       <Header />
       <div className="AppBody">
         <PreviewPoke />
+
         <SearchPoke />
         <BtnsType setTypeName={handleTypeNameChange} />
         {typeName ? (

@@ -60,9 +60,7 @@ export const ContainerRight = styled.div`
     width: 100%;
   }
 `;
-export const ImgPokemon = styled.img`
-  width: 150px;
-`;
+
 export const ContainerNames = styled.span`
   margin-top: 1rem;
   font-size: 2rem;
